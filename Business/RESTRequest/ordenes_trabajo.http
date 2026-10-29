@@ -1,0 +1,30 @@
+@host = http://localhost:9090/api
+@uri = {{host}}/ordenes_trabajo
+
+GET {{uri}}
+###
+POST {{uri}}
+Content-Type: application/json
+
+{
+  "placa_vehiculo": "2",
+  "propietario": "María",
+  "descripcion_falla": "Ruido en el sistema de frenos",
+  "costo_estimado": 2000.00,
+  "estado": "En Proceso"
+}
+###
+GET {{uri}}/1
+###
+PUT {{uri}}/1
+Content-Type: application/json
+
+{
+  "placa_vehiculo": "ABC-123",
+  "propietario": "María González",
+  "descripcion_falla": "Cambio de pastillas de freno",
+  "costo_estimado": 52000.00,
+  "estado": "En Proceso"
+}
+###
+DELETE {{uri}}/9
